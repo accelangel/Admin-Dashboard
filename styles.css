@@ -1,0 +1,493 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: roboto;
+    .border: 1px solid limegreen;
+}
+
+body {
+    height: 100vh;
+}
+
+@font-face {
+    font-family: roboto;
+    src: url(fonts/Roboto.ttf);
+}
+
+.container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main";
+}
+
+.container .sidebar {
+    grid-area: sidebar;
+    background-color: #1795d5;
+    padding: 1.35em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 4em;
+    color: white;
+}
+
+.sidebar .logoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2em;
+
+}
+
+.logoContainer img {
+    scale: 200%;
+    position: relative;
+    left: 0.35em;
+}
+
+
+.sidebar .tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    font-size: 2.15ch;
+    font-weight: bold;
+}
+
+.firstTabs {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+        "svgHome home"
+        "svgProfile profile"
+        "svgMessages messages"
+        "svgHistory history"
+        "svgTasks tasks"
+        "svgCommunities communities";
+    align-items: center;
+}
+
+.firstTabs>*,
+.secondTabs>* {
+    margin-bottom: 1em;
+}
+
+.secondTabs {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        "svgSettings settings"
+        "svgSupport support"
+        "svgPrivacy privacy";
+    align-items: center;
+
+}
+
+.home {
+    grid-area: home;
+}
+
+.svgHome {
+    grid-area: svgHome;
+    justify-self: start;
+    position: relative;
+    bottom: 0.1em;
+}
+
+.profile {
+    grid-area: profile;
+}
+
+.svgProfile {
+    grid-area: svgProfile;
+    justify-self: start;
+    position: relative;
+    bottom: 0.05em;
+}
+
+.messages {
+    grid-area: messages;
+}
+
+.svgMessages {
+    grid-area: svgMessages;
+    justify-self: start;
+    position: relative;
+    top: 0.025em;
+}
+
+.history {
+    grid-area: history;
+}
+
+.svgHistory {
+    grid-area: svgHistory;
+    justify-self: start;
+    position: relative;
+    bottom: 0.05em;
+}
+
+.tasks {
+    grid-area: tasks;
+}
+
+.svgTasks {
+    grid-area: svgTasks;
+    justify-self: start;
+    position: relative;
+    bottom: 0.075em;
+}
+
+.communities {
+    grid-area: communities;
+}
+
+.svgCommunities {
+    grid-area: svgCommunities;
+    justify-self: start;
+    position: relative;
+    bottom: 0.05em;
+}
+
+.settings {
+    grid-area: settings;
+}
+
+.svgSettings {
+    grid-area: svgSettings;
+    justify-self: start;
+    position: relative;
+    bottom: 0.05em;
+}
+
+.support {
+    grid-area: support;
+}
+
+.svgSupport {
+    grid-area: svgSupport;
+    justify-self: start;
+    position: relative;
+    bottom: 0.025em;
+}
+
+.privacy {
+    grid-area: privacy;
+}
+
+.svgPrivacy {
+    grid-area: svgPrivacy;
+    justify-self: start;
+    position: relative;
+    bottom: 0.05em;
+}
+
+
+.sidebar img {
+    height: 1.25em;
+}
+
+.sidebar li {
+    list-style: none;
+}
+
+.container .header {
+    grid-area: header;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.28);
+    z-index: 2;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "topLeft topRight"
+        "bottomLeft bottomRight";
+    align-items: center;
+}
+
+.header .topLeft {
+    grid-area: topLeft;
+    display: flex;
+    align-items: start;
+}
+
+.topLeft img {
+    scale: 45%;
+    position: relative;
+    left: 1em;
+    bottom: 0.7em;
+}
+
+.topLeft input {
+    background-color: #e1e2e2;
+    border-radius: 1em;
+    height: 2em;
+    width: 80%;
+    position: relative;
+    left: 1.5em;
+    border: none;
+}
+
+.header .topRight {
+    grid-area: topRight;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    position: relative;
+    left: 4em;
+}
+
+.topRight .bell {
+    scale: 50%;
+}
+
+.topRight .profilePic {
+    height: 3em;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profilePic img {
+    height: 100%;
+}
+
+.header .bottomLeft {
+    grid-area: bottomLeft;
+    display: flex;
+    padding-left: 2em;
+    gap: 1em;
+}
+
+.bottomLeft .profilePic {
+    height: 4em;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.verticalText p,
+.verticalText h3 {
+    margin-top: 0.5em;
+}
+
+.header .bottomRight {
+    grid-area: bottomRight;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1em;
+}
+
+.bottomRight button {
+    padding: 0.75em;
+    font-weight: bold;
+    background-color: #1795d5;
+    color: white;
+    border-radius: 3em;
+    width: 6.5em;
+    border: none;
+}
+
+.container .main {
+    grid-area: main;
+    background-color: #e1e2e2;
+    padding: 1em 1em 3em 1em;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 14fr;
+    grid-template-areas:
+        "yourProjects announcements"
+        "projectsContainer sideContainer";
+    gap: 1.75em;
+}
+
+.yourProjects {
+    grid-area: yourProjects;
+    align-self: center;
+}
+
+.announcements {
+    grid-area: announcements;
+    align-self: center;
+}
+
+.main .projectsContainer {
+    grid-area: projectsContainer;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        "project1 project2"
+        "project3 project4"
+        "project5 project6";
+    gap: 1.75em;
+    position: relative;
+    bottom: 1.75em;
+}
+
+.project1 p,
+.project2 p,
+.project3 p,
+.project4 p,
+.project5 p,
+.project6 p {
+    margin-top: 0.3em;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.projectsContainer .project1 {
+    grid-area: project1;
+    padding: 2.25em 1em 1.5em 1.5em;
+    background-color: #FFFFFF;
+    border-left: 0.6em solid #f0b524;
+    border-radius: 0.6em;
+    font-size: 0.9em;
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.16);
+}
+
+.projectsContainer .project2 {
+    grid-area: project2;
+    padding: 2.25em 1em 1.5em 1.5em;
+    background-color: #FFFFFF;
+    border-left: 0.6em solid #f0b524;
+    border-radius: 0.6em;
+    font-size: 0.9em;
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.16);
+}
+
+.projectsContainer .project3 {
+    grid-area: project3;
+    padding: 2.25em 1em 1.5em 1.5em;
+    background-color: #FFFFFF;
+    border-left: 0.6em solid #f0b524;
+    border-radius: 0.6em;
+    font-size: 0.9em;
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.16);
+}
+
+.projectsContainer .project4 {
+    grid-area: project4;
+    padding: 2.25em 1em 1.5em 1.5em;
+    background-color: #FFFFFF;
+    border-left: 0.6em solid #f0b524;
+    border-radius: 0.6em;
+    font-size: 0.9em;
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.16);
+}
+
+.projectsContainer .project5 {
+    grid-area: project5;
+    padding: 2.25em 1em 1.5em 1.5em;
+    background-color: #FFFFFF;
+    border-left: 0.6em solid #f0b524;
+    border-radius: 0.6em;
+    font-size: 0.9em;
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.16);
+}
+
+.projectsContainer .project6 {
+    grid-area: project6;
+    padding: 2.25em 1em 1.5em 1.5em;
+    background-color: #FFFFFF;
+    border-left: 0.6em solid #f0b524;
+    border-radius: 0.6em;
+    font-size: 0.9em;
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.16);
+}
+
+.main .sideContainer {
+    grid-area: sideContainer;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.9fr 1fr;
+    gap: 1em;
+    position: relative;
+    bottom: 1.75em;
+}
+
+.announcementsContainer {
+    background-color: #FFFFFF;
+    border-radius: 0.6em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5em;
+    font-size: 0.75em;
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.16);
+}
+
+.siteMaintenance,
+.shareDay {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 0.55em;
+}
+
+
+.siteMaintenance p,
+.shareDay p,
+.privacyPolicy p {
+    color: rgba(0, 0, 0, 0.6);
+    margin-top: 0.25em;
+}
+
+.trendingContainer {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+        "tegan teganText"
+        "morgan morganText"
+        "kendall kendallText"
+        "alex alexText";
+    background-color: #FFFFFF;
+    border-radius: 0.6em;
+    height: 85%;
+    align-self: end;
+    padding: 0.5em;
+    gap: 0.75em;
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.16);
+}
+
+.trendingContainer p~p {
+    font-size: 0.75em;
+    padding-top: 0.25em;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.trendingContainer img {
+    height: 3em;
+    align-self: center;
+    justify-self: center;
+}
+
+.teganText {
+    grid-area: teganText;
+    align-self: center;
+}
+
+.morganText {
+    grid-area: morganText;
+    align-self: center;
+}
+
+.kendallText {
+    grid-area: kendallText;
+    align-self: center;
+}
+
+.alexText {
+    grid-area: alexText;
+    align-self: center;
+}
+
+.sideContainer h3 {
+    position: absolute;
+    bottom: 15.4em;
+}
