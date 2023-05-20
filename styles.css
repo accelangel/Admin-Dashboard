@@ -341,72 +341,53 @@ body {
     color: rgba(0, 0, 0, 0.6);
 }
 
-.projectsContainer .project1 {
-    grid-area: project1;
+.project1,
+.project2,
+.project3,
+.project4,
+.project5,
+.project6 {
     padding: 2.25em 1em 1.5em 1.5em;
     background-color: #FFFFFF;
     border-left: 0.6em solid #f0b524;
     border-radius: 0.6em;
     font-size: 0.9em;
     box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.16);
+}
+
+.projectsContainer .project1 {
+    grid-area: project1;
 }
 
 .projectsContainer .project2 {
     grid-area: project2;
-    padding: 2.25em 1em 1.5em 1.5em;
-    background-color: #FFFFFF;
-    border-left: 0.6em solid #f0b524;
-    border-radius: 0.6em;
-    font-size: 0.9em;
-    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.16);
 }
 
 .projectsContainer .project3 {
     grid-area: project3;
-    padding: 2.25em 1em 1.5em 1.5em;
-    background-color: #FFFFFF;
-    border-left: 0.6em solid #f0b524;
-    border-radius: 0.6em;
-    font-size: 0.9em;
-    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.16);
 }
 
 .projectsContainer .project4 {
     grid-area: project4;
-    padding: 2.25em 1em 1.5em 1.5em;
-    background-color: #FFFFFF;
-    border-left: 0.6em solid #f0b524;
-    border-radius: 0.6em;
-    font-size: 0.9em;
-    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.16);
 }
 
 .projectsContainer .project5 {
     grid-area: project5;
-    padding: 2.25em 1em 1.5em 1.5em;
-    background-color: #FFFFFF;
-    border-left: 0.6em solid #f0b524;
-    border-radius: 0.6em;
-    font-size: 0.9em;
-    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.16);
 }
 
 .projectsContainer .project6 {
     grid-area: project6;
-    padding: 2.25em 1em 1.5em 1.5em;
-    background-color: #FFFFFF;
-    border-left: 0.6em solid #f0b524;
-    border-radius: 0.6em;
-    font-size: 0.9em;
-    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.16);
 }
 
 .main .sideContainer {
     grid-area: sideContainer;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.9fr 1fr;
-    gap: 1em;
+    grid-template-rows: 0.9fr 0.001fr 1fr;
+    grid-template-areas: 
+        "announcements"
+        "trendingText"
+        "trending";
     position: relative;
     bottom: 1.75em;
 }
@@ -418,15 +399,16 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 2.5em;
+    padding: 1.5em;
     font-size: 0.75em;
     box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.16);
+    grid-area: announcements;
 }
 
 .siteMaintenance,
 .shareDay {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    padding-bottom: 0.55em;
+    padding-bottom: 0.85em;
 }
 
 
@@ -435,6 +417,11 @@ body {
 .privacyPolicy p {
     color: rgba(0, 0, 0, 0.6);
     margin-top: 0.25em;
+}
+
+.trendingText {
+    grid-area: trendingText;
+    align-self: center;
 }
 
 .trendingContainer {
@@ -448,11 +435,17 @@ body {
         "alex alexText";
     background-color: #FFFFFF;
     border-radius: 0.6em;
-    height: 85%;
+    height: 90%;
     align-self: end;
     padding: 0.5em;
     gap: 0.75em;
     box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.16);
+    grid-area: trending;
+}
+
+.sideContainer h3 {
+    position: relative;
+    top: 1.25em;
 }
 
 .trendingContainer p~p {
@@ -485,11 +478,4 @@ body {
 .alexText {
     grid-area: alexText;
     align-self: center;
-}
-
-.sideContainer h3 {
-    position: absolute;
-    bottom: 13.5em;
-    right: 7em;
-    font-size: 1.25em;
 }
