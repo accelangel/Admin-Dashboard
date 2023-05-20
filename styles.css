@@ -489,5 +489,7 @@ body {
 
 .sideContainer h3 {
     position: absolute;
-    bottom: 15.4em;
+    bottom: 13.5em;
+    right: 7em;
+    font-size: 1.25em;
 }
